@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Nueva Tarea";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@ViewData["Title"]</h1>
+
+    <form>
+        <div class="form-group row">
+            <label for="txtTitle" class="col-sm-2 col-form-label">Titulo</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="txtTitle" placeholder="Titulo">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="txtDescription" class="col-sm-2 col-form-label">Descripcion</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="txtDescription" placeholder="Descripcion de la tarea">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="txtExpirationDate" class="col-sm-2 col-form-label">Expiracion</label>
+            <div class="col-sm-10">
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="txtExpirationDate" placeholder="Selecciona una fecha">
+                    @*  <input type="text" class="form-control" id="txtExpirationDate" value="Expiracion"> *@
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="ddlStatus" class="col-sm-2 col-form-label">Estatus</label>
+            <div class="col-sm-10">
+                <select id="ddlStatus" class="form-select" aria-label="Test">
+                    <option selected>Selecciona una opcion</option>
+                    <option value="1">Pendiente</option>
+                    <option value="2">Completada</option>
+                </select>
+            </div>
+        </div>
+    </form>
+    <br />
+    <button id="cancel-btn" type="button" class="btn btn-secondary">Cancelar</button>
+    <button id="save-new-task" type="button" class="btn btn-primary">Guardar</button>
+</div>

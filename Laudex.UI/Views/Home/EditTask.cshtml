@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Editar Tarea";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@ViewData["Title"]</h1>
+
+    <div id="error-message" class="" role="alert"></div>
+
+    <form>
+        <div class="form-group row">
+            <label for="txtId" class="col-sm-2 col-form-label">Id</label>
+            <div class="col-sm-10">
+                <input type="text" readonly class="form-control-plaintext" id="txtId" value="@Model.Id">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="txtTitle" class="col-sm-2 col-form-label">Titulo</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="txtTitle" value="@Model.Title">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="txtDescription" class="col-sm-2 col-form-label">Descripcion</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="txtDescription" value="@Model.Description">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="txtExpirationDate" class="col-sm-2 col-form-label">Expiracion</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="txtExpirationDate" value="@Model.ExpirationDate">
+               @*  <input type="text" class="form-control" id="txtExpirationDate" value="@Model.ExpirationDate"> *@
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="ddlStatus" class="col-sm-2 col-form-label">Estatus</label>
+            <div class="col-sm-10">
+                <select id="ddlStatus" class="form-select" aria-label="Test">
+                    <option value="0">Selecciona una opcion</option>
+                    @if (Model.Status.Id == 1)
+                    {
+                        <option selected value="1">Pendiente</option>
+                    }
+                    else
+                    {
+                        <option value="1">Pendiente</option>
+                    }
+                    @if (Model.Status.Id == 2)
+                        {
+                    <option selected value="2">Completada</option>
+                        }
+                    else
+                        {
+                    <option value="2">Completada</option>
+                        }
+                </select>
+            </div>
+        </div>
+    </form>
+    <br/>
+    <button id="delete-btn" type="button" class="btn btn-danger">Eliminar</button>
+    <button id="cancel-btn" type="button" class="btn btn-secondary">Cancelar</button>
+    <button id="save-edit-task" type="button" class="btn btn-primary">Guardar</button>
+</div>
